@@ -9,7 +9,7 @@ git add .
 	将工作区的修改提交到暂存区，如果只提交某个文件的修改，可以给文件名，如 ：
 git add a.txt
 
-git commit -m "README" 
+git commit -m "github的简单使用代码" 
 	将暂存区的修改提交到版本库，形成一个固定的版本保存下来
 	 -m 后面的引号内是提交的注释说明，可以写“修改了xxxx”。
 
@@ -19,11 +19,12 @@ git status
 git log
 	查看版本库，黄色字体部分，是每次修改后的独一无二的id
 	
-git reset --hard 5263be352ffd9e236f1434a130c593d703ca2c49
+git reset --hard 5263be352ffd9e236f1434a130c593d7222a2c49
 	退回版本库的某个版本，hard后面是需要退回版本的id
 
 git checkout -- read.txt
 	使用此命令，可以将该文件的修改撤销到上一次 git add 到暂存区的状态。
+
 
 
 
