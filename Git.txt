@@ -34,6 +34,7 @@ git remote add origin https://github.com/zheyiyuezhuo/Cli-.git
 git push -u origin master
 	使用这两个命令可以把版本库里的内容上传至GitHub的项目里。
 	https://github.com/zheyiyuezhuo/Cli-.git改成自己的项目位址，可以在Close or download里找。
+	第一次上传需要输入GitHub的账号密码。
 
 
 	
