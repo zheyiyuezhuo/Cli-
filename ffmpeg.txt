@@ -1,0 +1,93 @@
+ffmpeg -h
+	-求助 help
+
+
+ffmpeg -i xxxx.mkv xxxx.mp4
+	-转化视频格式和名称
+	-i后面输入文件，空格想要转换的名称和格式
+
+ffmpeg -i xxxx.flac -acodec libmp3lame -ar 44100 -ab 320k -ac 2 xxxx.mp3
+	-音乐格式的转换
+	-acodec用来设置音频编码器，后面libmp3lame表示mp3的编码器（可以不写）
+	-ar后面写采样率，不写就是默认采用原音频的采样率
+	-ab后面写的是比特率，默认为128k
+	-ac是用来区分双声道还是单声道，2为双声道，1为单声道
+
+ffmpeg -i xxxx.mp4 -s 1920x1080 -pix_fmt yuv420p -vcodec libx264 -preset medium -profile:v high -level:v 4.1 -crf 23 -r 30 -acodec acc -ar 44100 -ac 2 -b:a 128k xxxx.mp4
+	-视频的压缩编码
+	-s是缩放的意思，后面设置画面长和宽
+	-pix_fmt是设置视频颜色空间，可以单独用ffmpeg -pix_fmt查询
+	-vcodec是用来设置视频编解码器的，libx264是一种视频格式的编码库
+	-preset是指编码器的预设，默认为medium，如在压制视频，则采用veryslow（增加压制时间，减小视频体积）
+	-profile:v是指定编码器的设置，high表示超清
+	-level:v是对编码器配置的具体规范显示（压缩比和画质），后面数值有1-5.2，一般1080p的视频设置为4.1即可
+	-crf是码率控制模式，23是指视频的质量，默认为23，数值有0 18 23 28 51，数值越小质量越高，0就是无损画质
+	-r就是指帧率，30就是每秒30帧
+	-acodec是用来设置音频编码器，aac就是采用aac编码器
+	-b:a就是和-ab一样，视频网站一般都限制为128k
+
+ffmpeg -i xxxx.mp4 -vcodec copy -an xxxx.mp4
+	-提取纯视频
+	-vcodec是设置音频编码器，copy表示复制原来的格式
+	-an是剔除音频
+
+ffmpeg -i xxxx.mp4 -acodec copy -vn -map 0:1 xxxx.mp3
+	-提取纯音频
+	-acodec音频编码器
+	-vn是剔除视频
+	-map 0:1用来提取有多个音频文件中的某一个单独的音频，如没有就忽略
+
+ffmpeg -i xxxx.mp4 -i xxxx.mp3 -c copy xxxx.mp4
+	-合并纯音频和纯视频
+	-c copy维持（复制）原来的编码器格式
+
+ffmpeg -i "concat:input1.mpg|input2.mpg|input3.mpg" -c copy output.mpg 
+	-合并几段视频，利用FFmpeg concat 协议
+	-对于 MPEG 格式的视频，可以直接连接
+	
+ffmpeg -f concat -i filelist.txt -c copy output.mkv
+	-合并几段视频，利用FFmpeg concat 分离器
+	-需要首先建一个filelist.txt的文件夹在文件夹下写下
+		file 'input1.mkv'
+		file 'input2.mkv'
+		file 'input3.mkv'
+	-i filelist.txt这个文件名字不能改
+
+
+ffmpeg -allowed_extensions ALL -protocol_whitelist "file,http,crypto,tcp" -i index.m3u8 -c copy out.mp4
+	-合并有key的m3u8，需要m3u8+文件本体+key
+
+ffmpeg -i xxxx.mp3 -ss 00:01:00 -to 00:01:30 -acodec copy xxxx.mp4
+	-音频片段截取
+	-ss截取开始时间
+	-to截取结束时间
+
+ffmpeg -i xxxx.mp4 -ss 00:01:00 -t 30 -acodec copy -copyts xxxx.mp4
+	-视频片段截取
+	-t截取时长，30表示截取开始以后30s的视频
+	-copyts保留时间戳
+
+ffmpeg -i xxxx.mp4 -ss 6 -vframes 1 xxxx.jpg
+	-截图
+	-ss 6开始第6秒，也可以如00:01:00写具体时间
+	-vframes一秒钟有许多帧画面，1表示截取第一帧的画面
+	
+ffmpeg -i xxxx.mp4 -i xxxx.png -filter_complex "overlay=20:20" xxxx.mp4
+	-水印添加
+	-filter_complex表示添加水印，"overlay=20:20"离左边20像素，离顶部20像素
+	
+ffmpeg -i xxxx.mp4 -ss 7.5 -t 6 -s 640x320 -r 15 xxxx.gif
+	-gif制作
+	
+ffmpeg -f gdigrab -i desktop
+	-录屏（只能单纯录屏，不支持录音）
+	-f是用来格式化的，gdigrab用来捕获视频设备
+
+ffmpeg -codecs
+	-查看支持的编码器（也就是-vcodec后面可以接的参数）:
+
+ffmpeg -formats
+	-查看支持的封装格式（也就是-f后面可以接的参数）:
+
+ffmpeg -filters
+	-查看支持的滤镜（也就是-vf后面可以接的参数）:
