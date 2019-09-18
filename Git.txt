@@ -40,7 +40,7 @@ git push -u origin master
 
 git clone https://github.com/zheyiyuezhuo/Cli-.git
 	下载GitHub上的项目。
-	将https://github.com/zheyiyuezhuo/Cli-.git改为需要下载项目的地址。
+	其中https://github.com/zheyiyuezhuo/Cli-.git改为需要下载项目的地址。
 	
 
 
