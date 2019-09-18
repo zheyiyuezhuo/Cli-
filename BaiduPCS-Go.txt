@@ -1,0 +1,79 @@
+
+BaiduPCS-Go config set -appid=266719
+BaiduPCS-Go config set -appid=265486
+
+BaiduPCS-Go config set -appid=250528
+286652
+2318567
+4523655
+3035222
+250528
+
+BaiduPCS-Go config set -appid=310646
+
+
+
+
+
+BaiduPCS-Go ls
+
+BaiduPCS-Go cd /apps/baidu_shurufa
+
+BaiduPCS-Go d /apps/baidu_shurufa/part1.rar
+
+
+
+
+
+改方法只能在/apps/baidu_shurufa目录下才能执行操作，你可以先在pc把文件移到该目录下，再直接BaiduPCS-Go cd /apps/baidu_shurufa 然后就可以正常使用ls和d命令
+
+
+
+
+你先用266719获取文件目录，再用265486下载
+
+
+我的解决方法
+设置 BaiduPCS-Go config set -appid=266719
+重新登录
+然后会自动返回到根目录
+遇到403 设置 BaiduPCS-Go config set -appid=265486
+在 根目录下执行BaiduPCS-Go d apps/baidu_shurufa/xxxxx.zip 即可下载
+用 cd 进入不了baidu_shurufa ，会重新变成31045
+*/
+
+
+
+
+
+BaiduPCS-Go login    登录百度账号
+BaiduPCS-Go loglist  列出帐号列表
+BaiduPCS-Go logout   退出百度帐号
+BaiduPCS-Go su       切换百度帐号
+BaiduPCS-Go who      获取当前帐号
+
+
+
+
+
+————————新的软件设置，一条条来——————————
+
+BaiduPCS-Go login -bduss=VDZHJYRURpMGgAAAAAAAAAAAAAAAA
+
+BaiduPCS-Go config set -enable_https=true(默认值)
+
+BaiduPCS-Go config set -appid=266719
+
+BaiduPCS-Go config set -user_agent="netdisk; 9.6.73; android-android"
+"Mozilla;5.0"
+"netdisk;8.3.1;android-android"(默认值)
+
+BaiduPCS-Go config set -cache_size=65536
+
+BaiduPCS-Go config set -max_parallel=250
+100
+
+BaiduPCS-Go config set -max_download_load=1
+
+BaiduPCS-Go config set -savedir=F:\z\Videos\Movies\BaiduPan
+

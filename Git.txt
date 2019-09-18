@@ -25,7 +25,10 @@ git reset --hard 5263be352ffd9e236f1434a130c593d7222a2c49
 git checkout -- read.txt
 	使用此命令，可以将该文件的修改撤销到上一次 git add 到暂存区的状态。
 
+git remote add origin https://github.com/zheyiyuezhuo/Cli-.git
 
+git push -u origin master
+	使用这两个命令可以把版本库里的内容上传至GitHub的项目里。
 
 
 	
