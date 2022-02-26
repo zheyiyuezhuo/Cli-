@@ -75,14 +75,14 @@ _这里只是检测一下是否成功，测试以后可以把端口改回去，�
 	- 记录值随便填下就好，DDNS会自动更新的。
 	- `@`表示不带任何前缀的域名
 	- `*`表示泛域名，一般用于https的证书申请
-	![b1808d603c6c82371ffbfa0bba35cf28.png](../../_resources/b1808d603c6c82371ffbfa0bba35cf28.png)
+	![b1808d603c6c82371ffbfa0bba35cf28.png](./_resources/b1808d603c6c82371ffbfa0bba35cf28.png)
 
 #### 创建子用户
 
 1. 点击创建阿里云的[AccessKey](https://ram.console.aliyun.com/manage/ak?spm=5176.12818093.nav-right.dak.488716d0mHaMgg)
 2. 建议使用子用户的AccessKey，安全些
 3. 创建的子用户需要这些权限：
-	![face6531cd253c331ef53b1ecb77e29f.png](../../_resources/face6531cd253c331ef53b1ecb77e29f.png)
+	![face6531cd253c331ef53b1ecb77e29f.png](./_resources/face6531cd253c331ef53b1ecb77e29f.png)
 4. 然后复制给你的AccessKey
 5. 保存好，**只出现一次**
 
@@ -166,7 +166,7 @@ _这里只是检测一下是否成功，测试以后可以把端口改回去，�
 	- 比如http或https端口为12352
 	- 在nginx里设置反向代理规则（Proxy Hosts）：
 	- `jellyfin.baidu.com`至局域网的`192.168.1.1:8096`
-	![Inkeddb55b55bc6144eeecc.jpg](../../_resources/Inkeddb55b55bc6144eeecc.jpg)
+	![Inkeddb55b55bc6144eeecc.jpg](./_resources/Inkeddb55b55bc6144eeecc.jpg)
 - 我们外网请求地址`jellyfin.baidu.com:12352`
 - 访问请求到nginx，nginx一看内部有对应规则
 - 就把这个请求转发到内网的`192.168.1.1:8096`
@@ -228,7 +228,7 @@ _这里只是检测一下是否成功，测试以后可以把端口改回去，�
 - `Propagation Seconds(传播秒数)`留空
 - 同意`I Agree to the Let's Encrypt Terms of Service`
 - 点击`Save（保存）`就完成了
-	![bcc160a733f4478b0ff9a5e24c60018a.png](../../_resources/bcc160a733f4478b0ff9a5e24c60018a.png)
+	![bcc160a733f4478b0ff9a5e24c60018a.png](./_resources/bcc160a733f4478b0ff9a5e24c60018a.png)
 
 #### 开始https访问
 
@@ -236,7 +236,7 @@ _这里只是检测一下是否成功，测试以后可以把端口改回去，�
 - 点击Dashboard，点击Porxy Hosts，点击Add Proxy Host，点击SSL
 - 在`SSL Certificate`选择我们已经申请的证书，然后开启下面的四个选项，建议开启第一个`Force SSL（强制SSL）`
 - 点击保存，就完成了加密访问
-	![c0c925ffc0f70d3be5054b27677e4aec.png](../../_resources/c0c925ffc0f70d3be5054b27677e4aec.png)
+	![c0c925ffc0f70d3be5054b27677e4aec.png](./_resources/c0c925ffc0f70d3be5054b27677e4aec.png)
 
 
 
