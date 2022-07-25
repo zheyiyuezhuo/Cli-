@@ -1,0 +1,33 @@
+[MyAdblock]
+! Title: 自用过滤规则
+! Version: 202207726
+
+! 放行网址，包括小米智能家居网址 
+@@||sicri.top^
+@@||api.io.mi.com^
+@@||device.io.mi.com^
+@@||app.chat.xiaomi.net^
+@@||o2o.api.xiaomi.com^
+@@||o2o.api.xiaomi.com.lan^
+@@||package.box.xiaomi.com^
+
+! 屏蔽乐播广告以及基础电视
+||hpplay.cn^
+||adeng.hpplay.cn^
+||adcdn.hpplay.cn^
+||gz-bata.com^
+
+
+! 屏蔽tcl电视
+||ads.huantest.com^
+||ads.huan.tv^
+||ads.api.my7v.com^
+||testads.api.my7v.com^
+||ads-ut.api.leiniao.com^
+||hwads-t.api.my7v.com^
+||ads-uo.api.leiniao.com^
+||euads-o.api.leiniao.com^
+||my7v.com^
+||upgrade-uo.api.leiniao.com^
+||upgrade.api.my7v.com^
+||testoverseaupgrade.api.my7v.com^
